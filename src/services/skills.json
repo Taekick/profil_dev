@@ -1,0 +1,59 @@
+[
+  {
+    "integration": {
+      "tech": [
+        {
+          "techName": "HTML5"
+        },
+        {
+          "techName": "CSS3(Sass)"
+        },
+        {
+          "techName": "Flexbox"
+        },
+        {
+          "techName": "Bootstrap"
+        },
+        {
+          "techName": "Grid"
+        }
+      ]
+    }
+  },
+  {
+    "Javascript": {
+      "tech": [
+        {
+          "techName": "Javascript(ES6)"
+        },
+        {
+          "techName": "React(hooks, redux)"
+        },
+        {
+          "techName": "Jest(Testing-library)"
+        }
+      ]
+    }
+  },
+  {
+    "Tools": {
+      "tech": [
+        {
+          "techName": "Git"
+        },
+        {
+          "techName": "Docker"
+        }
+      ]
+    }
+  },
+  {
+    "Method": {
+      "tech": [
+        {
+          "techName": "Méthodes Agile Scrum / Kanban"
+        }
+      ]
+    }
+  }
+]
