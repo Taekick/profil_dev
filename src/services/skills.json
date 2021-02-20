@@ -1,5 +1,20 @@
 [
   {
+    "Javascript": {
+      "tech": [
+        {
+          "techName": "Javascript(ES6)"
+        },
+        {
+          "techName": "React(hooks, redux)"
+        },
+        {
+          "techName": "Jest(Testing-library)"
+        }
+      ]
+    }
+  },
+  {
     "integration": {
       "tech": [
         {
@@ -16,25 +31,14 @@
         },
         {
           "techName": "Grid"
+        },
+        {
+          "techName": "Styled-component"
         }
       ]
     }
   },
-  {
-    "Javascript": {
-      "tech": [
-        {
-          "techName": "Javascript(ES6)"
-        },
-        {
-          "techName": "React(hooks, redux)"
-        },
-        {
-          "techName": "Jest(Testing-library)"
-        }
-      ]
-    }
-  },
+
   {
     "Tools": {
       "tech": [
