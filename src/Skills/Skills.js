@@ -1,21 +1,64 @@
 import React from "react";
 import skills from "../services/skills.json";
-const Skills = () => {
-  let content = skills.map((tech) => {
-    const technology = Object.keys(tech)[0];
+import styled from "styled-components";
 
+const MySkills = styled.span`
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+`;
+const TechnosList = styled.ul`
+  padding: 0;
+  margin: 0;
+`;
+const TechnosItem = styled.li`
+  list-style: none;
+  font-family: monospace;
+  margin-bottom: 5px;
+  font-size: 1.8rem;
+  &:last-child {
+    margin: 0;
+  }
+  .techno {
+    &:after {
+      content: "";
+      width: 1px;
+      height: 10px;
+      background: #000;
+      display: inline-block;
+      margin: 0 5px;
+      transform: skew(-20deg);
+      background-color: #673ab7;
+    }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
+`;
+const Skills = () => {
+  let content = skills.map((tech, index) => {
+    const technology = Object.keys(tech)[0];
     return (
-      <li>
-        {tech[technology].tech.map((item) => {
-          return <>{item.techName} / </>;
-        })}
-      </li>
+      <>
+        <TechnosItem key={index}>
+          {tech[technology].tech.map((item, i) => {
+            return (
+              <span key={i} className='techno'>
+                {item.techName}
+              </span>
+            );
+          })}
+        </TechnosItem>
+      </>
     );
   });
 
   return (
     <>
-      <ul>{content} </ul>
+      <MySkills>Mes compétences :</MySkills>
+      <TechnosList>{content}</TechnosList>
     </>
   );
 };
