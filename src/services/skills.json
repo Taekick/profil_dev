@@ -6,7 +6,7 @@
           "techName": "Javascript(ES6)"
         },
         {
-          "techName": "React(hooks, redux)"
+          "techName": "React(hooks, redux, styled-component)"
         },
         {
           "techName": "Jest(Testing-library)"
@@ -28,12 +28,6 @@
         },
         {
           "techName": "Bootstrap"
-        },
-        {
-          "techName": "Grid"
-        },
-        {
-          "techName": "Styled-component"
         }
       ]
     }
@@ -55,7 +49,7 @@
     "Method": {
       "tech": [
         {
-          "techName": "Méthodes Agile Scrum / Kanban"
+          "techName": "Méthodes Agiles Scrum et Kanban"
         }
       ]
     }

@@ -16,11 +16,6 @@ html {
 body {
   font-size: 1.6rem; // <=>16px
   font-family: 'Open Sans', sans-serif;
-  color: #262323;
-  &.light {
-    background: #fbf9f9;
-  }
- 
 }
 `;
 

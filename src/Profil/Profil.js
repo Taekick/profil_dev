@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Skills from "../Skills/Skills";
 import { SiReact } from "react-icons/si";
+import { FiMoon, FiSun } from "react-icons/fi";
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -10,7 +12,6 @@ const Wrapper = styled.div`
   border-bottom: 2px solid;
   padding: 20px 0;
   @media screen and (max-width: 846px) {
-    /* padding: 10px 30px; */
     margin: 0 30px;
   }
 `;
@@ -18,11 +19,13 @@ const Name = styled.h1`
   font-weight: bold;
   margin: 0;
   font-size: 2.8rem;
-  line-height: 0.8em;
+  line-height: 1em;
 `;
 const Job = styled.span`
   font-size: 2rem;
-  /* font-family: "PT Sans Narrow"; */
+  color: #5a615f;
+  font-weight: 400;
+  display: block;
 `;
 
 const Intro = styled.div`
@@ -31,31 +34,149 @@ const Intro = styled.div`
 const Line = styled.p`
   margin: 5px 0;
   align-items: center;
-  font-weight: 100;
+  /* font-weight: 100; */
 `;
 const ReactPicto = styled(SiReact)`
   color: #03d8ff;
-  margin: 4px 0 0 5px;
+  margin: 2px 0 0 5px;
   vertical-align: top;
 `;
-const Profil = () => {
+const Presentation = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const Struct = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Moon = styled(FiMoon)`
+  color: black;
+  display: inline;
+  position: absolute;
+  right: 5px;
+  top: 3px;
+`;
+
+const Sun = styled(FiSun)`
+  color: #fff;
+  display: none;
+  position: absolute;
+  left: 5px;
+  top: 3px;
+`;
+
+const CheckBoxWrapper = styled.div`
+  position: relative;
+  margin-right: 10px;
+`;
+const CheckBoxLabel = styled.label`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  border-radius: 15px;
+  background: #bebebe;
+  cursor: pointer;
+  &::after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    margin: 3px;
+    background: #ffffff;
+    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+  }
+`;
+const CheckBox = styled.input`
+  opacity: 0;
+  z-index: 1;
+  border-radius: 15px;
+  width: 42px;
+  height: 26px;
+  &:checked + ${CheckBoxLabel} {
+    ${Moon} {
+      display: none;
+    }
+    ${Sun} {
+      display: inline;
+    }
+    &::after {
+      content: "";
+      margin-left: 28px;
+    }
+  }
+`;
+
+const Available = styled.div`
+  margin-top: 20px;
+  background: #eae428;
+  color: #000;
+  font-style: italic;
+  padding: 0px 16px 0 14px;
+  display: flex;
+  align-self: flex-start;
+  position: relative;
+  font-size: 1.4rem;
+  &:before {
+    content: "";
+    background: linear-gradient(to right bottom, white 50%, transparent 50%);
+    position: absolute;
+    width: 3%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  &:after {
+    content: "";
+    background: linear-gradient(to left top, white 50%, transparent 50%);
+    position: absolute;
+    width: 3%;
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+  @media screen and (max-width: 375px) {
+    width: 98%;
+  }
+`;
+const Profil = ({ dark }) => {
   return (
     <Wrapper>
-      <Name>Alexandre LY</Name>
-      <Job>Développeur front-end</Job>
+      <Struct>
+        <Presentation>
+          <Name>
+            Alexandre LY
+            <Job>Développeur front-end</Job>
+          </Name>
+        </Presentation>
 
+        <CheckBoxWrapper>
+          <CheckBox id='checkbox' type='checkbox' onChange={dark} />
+          <CheckBoxLabel htmlFor='checkbox'>
+            <Moon />
+            <Sun />
+          </CheckBoxLabel>
+        </CheckBoxWrapper>
+      </Struct>
       <Intro>
         <Line>
-          Je développe en JavaScript et j'utilise particulièrement et même
-          beaucoup React
+          Je développe des applications web en Javascript et particulièrement
+          avec React
           <ReactPicto />
         </Line>
         <Line>
-          J'aime également intégrer de belles maquettes graphique et donner vie
-          aux interfaces.
+          J'intègre également les maquettes graphique et donne vie aux
+          interfaces sur desktop et mobile (responsive).
         </Line>
       </Intro>
       <Skills></Skills>
+      <Available>
+        Un poste de développeur React en CDI à pourvoir ? Let's talk together
+        ;-)
+      </Available>
     </Wrapper>
   );
 };

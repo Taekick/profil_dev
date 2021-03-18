@@ -6,16 +6,17 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 30px;
+  @media screen and (max-width: 846px) {
+    margin: 0 0 10px;
+  }
 `;
 const PhotoProfil = styled.img`
-  /* border: 1px solid #000; */
   width: 250px;
   height: 250px;
   border-radius: 50%;
   background-size: 100%;
   margin-bottom: 20px;
-  box-shadow: 0px 0px 20px 0px #ddd;
 `;
 const SocialIconLink = styled.a`
   color: #000;

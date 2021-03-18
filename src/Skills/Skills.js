@@ -14,7 +14,7 @@ const TechnosList = styled.ul`
 const TechnosItem = styled.li`
   list-style: none;
   font-family: monospace;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-size: 1.8rem;
   &:last-child {
     margin: 0;
@@ -28,7 +28,7 @@ const TechnosItem = styled.li`
       display: inline-block;
       margin: 0 5px;
       transform: skew(-20deg);
-      background-color: #673ab7;
+      background-color: #5a615f;
     }
     &:last-child {
       &:after {
